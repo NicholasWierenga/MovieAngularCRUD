@@ -1,0 +1,23 @@
+<div *ngIf="results.length ===0">
+    <p>Search Movies By Title</p>
+    <input type="text" [(ngModel)]="searchTerm" />
+    <button (click)="searchMovies()">Search</button>
+</div>
+<div *ngFor="let result of results">
+    <p>{{result.title}}</p>
+</div>
+
+
+
+<h1>Add a new movie here</h1>
+<input placeholder="Title" [(ngModel)]="title" type="string">
+<br>
+<input placeholder="Runtime" [(ngModel)]="runTime" type="number">
+<br>
+<input placeholder="Year released" [(ngModel)]="year" type="number">
+<br>
+<input placeholder="Description" [(ngModel)]="description" type="string">
+<br>
+<input placeholder="Leading actor" [(ngModel)]="leadActor" type="string">
+<br>
+<input type="button" value="Submit" (click)="createMovie(title, runTime, year, description, leadActor)">
